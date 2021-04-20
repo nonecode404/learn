@@ -1,0 +1,359 @@
+<!-- /views/login.jsp -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<!-- /views/commons/common.jsp -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Content-Type" content="tex/html; charset=UTF-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="author" content="当虹科技" />
+<!-- 加入360浏览器使用极速模式打开----begin -->
+<meta name="renderer" content="webkit">
+<!-- 加入360浏览器使用极速模式打开----end -->
+<title>医养通服务</title>
+
+
+<!-- 公用 css、js 开始 -->
+<link rel="stylesheet" href="/static/ui-frame/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="/static/ui-frame/bootstrap/3.3.5/css/font-awesome.min.css">
+
+<!-- Custom styles for this template -->
+<link rel="stylesheet" href="/static/css/dashboard.css" >
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script type="text/javascript"src="/static/ui-frame/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript"src="/static/ui-frame/jquery/1.11.1/jquery-ui.min.js"></script>
+<script type="text/javascript"src="/static/ui-frame/jquery/jquery.validate.js"></script>
+<script type="text/javascript"src="/static/ui-frame/jquery/jquery.cookie.js"></script>
+<script type="text/javascript"src="/static/ui-frame/jquery/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="/static/ui-frame/jquery/highcharts-4.2.3/highcharts.js"></script>
+
+<!-- Bootstrap 核心文件 -->
+<script type="text/javascript" src="/static/ui-frame/bootstrap/3.3.5/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/ui-frame/bootstrap/docs.js"></script>
+<script type="text/javascript" src="/static/ui-frame/bootstrap/ui/bootstrap-table.js"></script>
+<script type="text/javascript" src="/static/ui-frame/bootstrap/ui/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="/static/ui-frame/bootstrap/bootbox/3.3.0/bootbox.min.js"></script>
+<script type="text/javascript" src="/static/ui-frame/bootstrap/bootbox/3.3.0/zh_CN.js"></script>
+<script type="text/javascript" src="/static/ui-frame/bootstrap/bootstrap.util.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script type="text/javascript"src="/static/ui-frame/bootstrap/ie10-viewport-bug-workaround.js"></script>
+<script type="text/javascript"src="/static/ui-frame/bootstrap/ie-emulation-modes-warning.js"></script>
+<!-- 菜单公共js-->
+<script type="text/javascript"src="/static/modules/common/menu.js"></script>
+
+<!-- 用于为 IE6-8 以及其它不支持 CSS3 Media Queries 的浏览器提供媒体查询的 min-width 和 max-width 特性，实现响应式网页设计 -->
+<!--[if lt IE 9]>
+<script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+<script type="text/javascript">
+
+	//资源公共访问路径
+	var basePath = "", uiPath = "/static", cssPath = "/static/css", uiFramePath = "/static/ui-frame", modulesPath = "/static/modules";
+	
+	//当前登录人信息
+	var curLoginAccountId = ""
+	
+	//im服务实例
+	var imService = null;
+	var videoRoomService = null;
+	
+	/**
+	 * 提示框公共方法
+	 */
+	var Info={};
+
+	
+	/**
+	 * easyui Datagrid百分比显示宽度
+	 */
+	function fixWidth(percent){  
+	    return $(window).width() * (percent/100) ;//根据自身情况更改
+	}
+	
+	/**
+	* 特殊字符校验
+	*/
+	function characterCheck(ch){
+		return new RegExp("[`~!@#$%^&*()=|{}\\[\\]/?~！@#￥……&*（）——|【】]").test(ch);
+	}
+	
+	/**
+	* 全屏操作
+	*/
+	function launchIntoFullscreen(element) { 
+		 if(element.requestFullscreen){ 
+			element.requestFullscreen(); 
+		 }else if(element.mozRequestFullScreen) {
+		 	element.mozRequestFullScreen(); 
+		 }else if(element.webkitRequestFullscreen) { 
+		  	element.webkitRequestFullscreen(); 
+		 }else if(element.msRequestFullscreen) { 
+		  	element.msRequestFullscreen(); 
+		 }
+ 	}
+	
+	/**
+	* 退出全屏
+	*/
+	function exitFullscreen() {
+		 if(document.exitFullscreen) {
+		  	document.exitFullscreen(); 
+		 } else if(document.mozCancelFullScreen) {
+		  	document.mozCancelFullScreen(); 
+		 } else if(document.webkitExitFullscreen) { 
+		 	document.webkitExitFullscreen(); 
+		 } 
+ 	 }
+	
+	/**
+	* 监控全屏状态，支持回调
+	*/
+	function watchFullScreen(fullCallback,exitFullCallbck){
+		document.addEventListener("fullscreenchange", function () {
+			doSomething();
+		}, false);
+		document.addEventListener("mozfullscreenchange", function () {
+			doSomething();
+		}, false);
+		document.addEventListener("webkitfullscreenchange", function () {
+			doSomething();
+		}, false);
+		document.addEventListener("msfullscreenchange", function () {
+			doSomething();
+		}, false);
+		function doSomething(){
+			if(document.fullscreenElement || document.msFullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement){
+				fullCallback();
+			}else{
+				exitFullCallbck();
+			}
+		}
+	}
+	
+	/**
+	 * 计算两个时间的差值
+	 */
+	function timeFn(d1,d2) {
+	    //如果时间格式是正确的，那下面这一步转化时间格式就可以不用了
+	    let dateBegin = new Date(d1.replace(/-/g, "/"));//将-转化为/，使用new Date
+	    let dateEnd = d2?new Date(d2.replace(/-/g, "/")):new Date();//将-转化为/，使用new Date
+	    let dateDiff = dateEnd.getTime() - dateBegin.getTime();//时间差的毫秒数
+	    let dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000));//计算出相差天数
+	    let leave1=dateDiff%(24*3600*1000)    //计算天数后剩余的毫秒数
+	    let hours=Math.floor(leave1/(3600*1000))//计算出小时数
+	    let leave2=leave1%(3600*1000)    //计算小时数后剩余的毫秒数
+	    let minutes=Math.floor(leave2/(60*1000))//计算相差分钟数
+	    let leave3=leave2%(60*1000)      //计算分钟数后剩余的毫秒数
+	    let seconds=Math.round(leave3/1000) //计算相差秒数
+	    return dayDiff+"天"+hours+"时"+minutes+"分"+seconds+"秒";
+	}
+	
+	/**
+	 * 格式化秒数为“时分秒”
+	 */
+	function formatSeconds(value) {
+	    let theTime = parseInt(value);// 秒
+	    let middle= 0;// 分
+	    let hour= 0;// 小时
+	    if(theTime > 60) {
+	        middle= parseInt(theTime/60);
+	        theTime = parseInt(theTime%60);
+	        if(middle> 60) {
+	            hour= parseInt(middle/60);
+	            middle= parseInt(middle%60);
+	        }
+	    }
+	    let result = parseInt(theTime)+"秒";
+	    if(middle > 0) {
+	        result = parseInt(middle)+"分"+result;
+	    }
+	    if(hour> 0) {
+	        result = parseInt(hour)+"小时"+result;
+	    }
+	    return result;
+	}
+	
+	/**
+	 * 扩展日期对象，格式化
+	 */
+	Date.prototype.Format = function (fmt) {
+	    var o = {
+	        "M+": this.getMonth() + 1, //月份 
+	        "d+": this.getDate(), //日 
+	        "h+": this.getHours(), //小时 
+	        "m+": this.getMinutes(), //分 
+	        "s+": this.getSeconds(), //秒 
+	        "q+": Math.floor((this.getMonth() + 3) / 3), //季度 
+	        "S": this.getMilliseconds() //毫秒 
+	    };
+	    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+	    for (var k in o)
+	    if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+	    return fmt;
+	}
+	
+	/**
+	 * 关闭当前界面（非open的页面）
+	 */
+	function closeWebPage() {
+		 window.opener = null;
+	     window.open('', '_self', '');
+	     window.close();//以上三行可关闭单个页面
+	     window.open('', '_top');
+	     window.top.close();
+	     window.location.href = 'about:blank ';
+	     window.close();//上面两次关闭适用于FireFox等浏览器
+	}
+	
+	/**
+	 * enter按键操作
+	 */
+	function searchKeyPress(e,fun){
+	    e = e || window.event;
+	    if (e.keyCode == 13){
+	    	fun();
+	        return false;
+	    }
+	    return true;
+	}
+	
+	/**
+	* 元素完成后执行的公共内容
+	*/
+	$(function(){
+		
+		// 修复在模态框基础上，使用bootbox弹框 造成的滚动条问题
+		$(document).on("hidden.bs.modal", ".bootbox", function () {
+			  if($(".modal-backdrop").length > 0){
+			    $("body").addClass("modal-open");
+			  }
+		})
+		
+		/*
+		* 对弹出框进行方法赋值
+		*/
+		Info.showInfo =function(title,duration){
+			Info.showByType("alert-success",title,duration)
+		};
+		Info.showError=function(title,duration){
+			Info.showByType("alert-danger",title,duration)
+		};
+		Info.showByType = function(type,title,duration){
+			$(".alert-custom").remove();
+			$("body").append("<div  class='alert "+type+" alert-custom'  role='alert'><strong>"+title+"</strong></div>");
+			 $(".alert-custom").css({
+				 "left":(document.body.clientWidth-$(".alert-custom").width())/2+"px",
+				 "top":"7%"
+			 });
+			 if(duration == null){
+				 $(".alert-custom").delay (3000).fadeOut ();
+			 }else if(duration>0){
+				 $(".alert-custom").delay (duration).fadeOut ();
+			 }
+		}
+	})
+	
+</script>
+<!-- 公用 css、js 结束 -->
+<!-- /views/commons/easyui.jsp -->
+
+
+<link rel="stylesheet" href="/static/ui-frame/jquery-easyui/1.3.2/themes/metro/easyui.css" />
+<link rel="stylesheet" href="/static/ui-frame/jquery-easyui/1.3.2/themes/metro/icon.css" />
+<script type="text/javascript" src="/static/ui-frame/jquery-easyui/1.3.2/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/static/ui-frame/jquery-easyui/1.3.2/easyui.util.js"></script>
+<style>
+
+	/*
+	 * 重写datagrid表格样式
+	 */
+	 .datagrid-header-row td{
+		height: 40px;
+		background-color:  rgb(237, 242, 242);
+	}
+	
+	.panel-body{
+		padding: 0;
+	}
+	.datagrid-row{
+		height: 45px;
+	}
+	.pagination{
+		width: 100%
+	}
+	.datagrid-btable{
+		width: 100%
+	}
+	.datagrid-header-inner{
+		width: 100%
+	}
+	.datagrid-htable{
+		width: 100%
+	}
+	
+	.datagrid-btable .datagrid-cell{overflow: hidden;text-overflow:ellipsis;white-space: nowrap;} 
+	
+	.panel{
+	margin: 0px;
+	}
+	 
+</style>
+
+<link href="/static/css/login.css" rel="stylesheet" />
+<script src="/static/modules/login.js" type="text/javascript"></script>
+</head>
+<body>
+	<div style="width: 100%" align="center">
+        <div class="main_logo" style="background: url( https://app.stg.danghongyun.com/login.png) no-repeat center bottom"></div>
+        <div class="main_box">
+            <form id="login-form" class="form-horizontal" action="j_spring_security_check" method="post" >
+               <div id="errorMessage" class = "alert-danger alert" ></div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <span class="icon_user icon" aria-hidden="true" ></span>
+                        <input name="j_username" id="j_username" class="form-control" placeholder="请输入登录帐号">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <span class="icon_lock icon" aria-hidden="true" ></span>
+                        <span class="icon_eye icon" aria-hidden="true"></span>
+                        <input name="j_password" id="j_password" type="password" class="form-control pwdInput" placeholder="请输入登陆密码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <button type="submit" id = "loginBtn" class="btn btn-primary btn-submit btn-block">登录</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+	</div>
+</body>
+
+</html>

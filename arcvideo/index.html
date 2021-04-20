@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+</head>
+
+
+<html>
+<head>
+    <title>查看打卡记录</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        .exp {
+            FONT-FAMILY: 宋体;
+            FONT-SIZE: 12px;
+            FONT-WEIGHT: bold;
+        }
+    </style>
+    <script src="../../script/My97DatePicker/WdatePicker.js"></script>
+    <script language="javaScript">
+        function check() {
+            var todaydate = new Date()
+            start = new Date(document.iForm.startdate.value.replace(/\-/g, "/"))
+            end = new Date(document.iForm.enddate.value.replace(/\-/g, "/"))
+            if (start > end) {
+                alert("查询的起始日期不能大于截止日期，请重新选择！");
+                return false;
+            }
+            if (end > todaydate) {
+                alert("查询的结束日期不能大于当前日期，请重新选择！");
+                return false;
+            }
+            return true;
+        }
+
+        function AutomateExcel() {
+            // Start Excel and get Application object. 
+            var oXL = new ActiveXObject("Excel.Application");
+            // Get a new workbook. 
+            oXL.Visible = true;   //需要先显示，否则找不到对象
+            var oWB = oXL.Workbooks.Add();
+            var oSheet = oWB.ActiveSheet;
+            var table = document.getElementById("tMainText");
+            var hang = table.rows.length;
+            var hangTemp = 0;
+            oSheet.Name = "员工打卡记录列表";
+
+            var lie = table.rows(0).cells.length;
+
+            var AvoidAttendence = "";
+
+            // Add table headers going cell by cell. 
+            for (i = 0; i < hang; i++) {
+                if (AvoidAttendence.indexOf(table.rows(i).cells(5).innerText) != -1) {
+                    hangTemp++;
+                    continue;
+                }
+                for (j = 0; j < lie; j++) {
+                    oSheet.Cells(i + 1 - hangTemp, j + 1).value = table.rows(i).cells(j).innerText;
+                }
+
+            }
+            oXL.UserControl = true;
+        }
+    </script>
+</head>
+<body class="body1">
+    
+<link href="/include/HRMenu/Theme/orange/theme.css" rel="stylesheet" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<script src="/script/index2014/jquery.min.js"></script>
+<script src="/script/index2014/menu.js"></script>
+<link href="/Style/index2014/public.css" rel="stylesheet" />
+<link href="/Style/index2014/base.css" rel="stylesheet" />
+<div id="headerDiv">
+    <table class="width" height="30" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td align="left">
+                欢迎你，
+                <a href="/hrinfo/baseinfo/EmployeeDetail.asp" id="userid">徐晗</a>
+                <a href="/logout.asp">登出</a>
+				
+                <a href="/hrinfo/attendance/check.asp?action=check&r=.7055475">打卡</a>
+            </td>
+            <td align="right"><a class="select" style="display:none;" href="/default.asp">切换为旧版首页</a> <a href="#" style="display:none;">English</a></td>
+        </tr>
+    </table>
+</div>
+
+<div id="header"></div>
+<div style="width:95%;margin:auto;" id="container">
+
+
+<div id="headerLocationDiv" class="box titlebar font14">
+		<a href='/index2014/index.asp'>站点首页</a><a href='/index2014/HR/index.asp'>人力资源</a><a href='/include/HRMenu/Menulevel1.asp?functionId=19005&functionName=Attendance Manage'>考勤管理</a><a href='/hrinfo/attendance/check.asp'>出勤记录</a><a href='/hrinfo/attendance/viewRecord.asp'>打卡记录</a>
+				<script language="javascript">
+				function AddLink(functionid)
+				{
+					//var functionid;
+					//functionid = parent.document.getElementById('functionid').value;
+					//functionid=10212;
+					var link="/mysite/mylink/addLink.asp?thisFunctionId="+functionid +"&scriptname=/hrinfo/attendance/viewRecord.asp&functionname=打卡记录";
+	  			    var openleft=5;
+					var opentop=5;
+					var calwidth=220;
+					var calheight=100;
+					openleft = parseInt(((screen.width - calwidth) / 2),10);
+					opentop = parseInt(((screen.height - calheight) / 2),10);
+					var attr = "left=" + openleft + ",top=" + opentop;
+					attr += ",resizable=no, toolbar=no,directories=no,menubar=no,scrollbars=no,width=" + calwidth + ",height=" + calheight;
+					//var link = "<a href='/mysite/addLink.asp?thisFunctionId=" + functionid + "&scriptname=/hrinfo/attendance/viewRecord.asp'"+"  target='_blank'>Add to My Quick Link</a>"
+					//alert(link);
+					thiswindow=window.open(link,"PopupWindow",attr);
+					thiswindow.focus();
+					//document.write (link) ;
+				}
+					</script>
+					<script language="javascript">
+					/*function linkHelp()
+					{
+					var functionid = parent.document.getElementById('functionid').value;
+					var link = "<a href='/manual/gethelp.asp?thisFunctionId=" + functionid + "' target='_blank'> Help</a>";
+					document.write (link) ;
+					}*/
+				</script>
+				<a class="fltrt font12" href="javascript:AddLink(10212);"><img border="0" SRC="/images/folder1.gif" ALT="Add to My Quick Link"></a>
+
+			
+</div>
+
+<script>
+    var RootFunctionID = "3";
+</script>
+
+<script src="/script/index2014/menu.js"></script>
+<div>
+<table class="mainTabDiv" width="100%" align="center">
+    <tr>
+        <td ><a href="check.asp?action=check">Check In/Out</a></td>
+        <td ><a href="daka_apply.asp">打卡申诉</a></td>
+        <td ><a href="daka_apply_reply.asp">回复申诉</a></td>
+        <td ><a href="daka_apply_view.asp">查看申诉</a></td>
+        <td ><a href="daka_apply_stat.asp">申诉统计</a></td>
+        <td  class="tabselect" ><a href="viewRecord.asp">View Record</a></td>
+        <td ><a href="Statistics.asp">Attendance Statistics</a></td>
+        
+		<td ><a href="../leaving/leave_apply01.asp">Ask For Leaving</a></td>
+   </tr>
+</table>
+</div>
+    <form name="iForm" action="viewrecord.asp" method="post" onsubmit="javascript:return check()">
+        <table border="0" width="100%">
+            <tr>
+                <td width="130" align="left"><font class="exp">起始时间：</font></td>
+                <td width="130" align="left"><font class="exp">截止时间：</font></td>
+                <td align="left" width="120"><font class="exp">部门：</font></td>
+                <td align="left" width="120"><font class="exp">状态：</font></td>
+                <td align="left" width="120"><font class="exp">员工姓名：</font></td>
+                <td rowspan="2" valign="bottom" align="left">
+                    <input type="submit" value="查  看" id="submit1" name="submit1">
+                    <input type="button" value="导出到Excel" id="btExcel" name="btExcel" onclick="AutomateExcel();">
+                </td>
+            </tr>
+            <tr>
+                <td width="130" align="left" nowrap>
+				
+                    <input type="TEXT" size="11" maxlength="10" name="startdate" value="2021-1-18" class="Wdate" onfocus="WdatePicker({dateFmt:'yyyy/MM/dd'});" /></td>
+					
+                <td width="130" align="left" nowrap>
+                    <input type="TEXT" size="11" maxlength="10" name="enddate" value="2021-1-25" class="Wdate" onfocus="WdatePicker({dateFmt:'yyyy/MM/dd'});" /></td>
+                <td align="left" width="120">
+                    <select size="1" id="group_id" name="group_id">
+                        <option value="all">All Group</option>
+                        
+                        <option value="G8231" selected>..QA</option>
+                        
+                    </select>
+
+                </td>
+                <td>
+                    <select size="1" name="UserStatus">
+                        <option value="1" >实习</option>
+                        <option value="5" >兼职</option>
+                        <option value="23" selected>全职</option>
+                        <option value="-2" >短训</option>
+                        
+                    </select>
+                </td>
+                <td>
+                    <input type="TEXT" size="11" maxlength="10" name="employee" value="徐晗">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+
+    <table id="tMainText" class="ListTable" width="100%">
+        <tr height="22">
+            <th align="center" nowrap bgcolor="#ccccff"><font class="exp">员工姓名</font></th>
+            
+            <th align="center" nowrap bgcolor="#ccccff"><font class="exp">&nbsp;&nbsp;2021-1-25&nbsp;&nbsp;</font></th>
+            
+            <th align="center" nowrap bgcolor="#ccccff"><font class="exp">&nbsp;&nbsp;2021-1-24&nbsp;&nbsp;</font></th>
+            
+            <th align="center" nowrap bgcolor="#ccccff"><font class="exp">&nbsp;&nbsp;2021-1-23&nbsp;&nbsp;</font></th>
+            
+            <th align="center" nowrap bgcolor="#ccccff"><font class="exp">&nbsp;&nbsp;2021-1-22&nbsp;&nbsp;</font></th>
+            
+            <th align="center" nowrap bgcolor="#ccccff"><font class="exp">&nbsp;&nbsp;2021-1-21&nbsp;&nbsp;</font></th>
+            
+            <th align="center" nowrap bgcolor="#ccccff"><font class="exp">&nbsp;&nbsp;2021-1-20&nbsp;&nbsp;</font></th>
+            
+            <th align="center" nowrap bgcolor="#ccccff"><font class="exp">&nbsp;&nbsp;2021-1-19&nbsp;&nbsp;</font></th>
+            
+            <th align="center" nowrap bgcolor="#ccccff"><font class="exp">&nbsp;&nbsp;2021-1-18&nbsp;&nbsp;</font></th>
+            
+        </tr>
+        
+        <tr>
+            <td align="left" bgcolor="#ffffff" nowrap><font class="exp">徐晗</font></td>
+            
+            <td align="left" bgcolor="#FFFFFF" nowrap>
+                
+                <font class="exp">2021-1-25 8:45:19</font><br>
+                
+                <font class="exp">2021-1-25 11:34:03</font></td>
+            <td align="left" bgcolor="#FFFFFF" nowrap>
+                
+					&nbsp;
+				</td>
+            <td align="left" bgcolor="#FFFFFF" nowrap>
+                
+                <font class="exp">2021-1-23 17:45:05</font><br>
+                
+                <font class="exp">2021-1-23 19:51:30</font></td>
+            <td align="left" bgcolor="#FFFFFF" nowrap>
+                
+                <font class="exp">2021-1-22 8:46:14</font><br>
+                
+                <font class="exp">2021-1-22 18:42:05</font></td>
+            <td align="left" bgcolor="#FFFFFF" nowrap>
+                
+                <font class="exp">2021-1-21 8:37:14</font><br>
+                
+                <font class="exp">2021-1-21 20:45:12</font></td>
+            <td align="left" bgcolor="#FFFFFF" nowrap>
+                
+                <font class="exp">2021-1-20 8:06:51</font><br>
+                
+                <font class="exp">2021-1-20 20:38:24</font></td>
+            <td align="left" bgcolor="#FFFFFF" nowrap>
+                
+                <font class="exp">2021-1-19 7:55:37</font><br>
+                
+                <font class="exp">2021-1-19 20:36:20</font></td>
+            <td align="left" bgcolor="#FFFFFF" nowrap>
+                
+                <font class="exp">2021-1-18 8:36:24</font><br>
+                
+                <font class="exp">2021-1-18 20:48:48</font></td>
+        </tr>
+        
+    </table>
+    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <div class="footerDiv">
+    <hr>
+    <p align="center">
+    当虹科技
+    </p>
+</div>
+</div>
+
+
+        </tr>
+    </table>
+</body>
+</html>

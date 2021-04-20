@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<title>当虹科技</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script language="javascript" src="/tips/FloatDiv2014.js?v=2" type="text/javascript" ></script>
+<link href="/style/index2014/index.css?v=3" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<script>
+  var RootFunctionID =0;
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<script src="/script/index2014/jquery.min.js"></script>
+<script src="/script/index2014/menu.js"></script>
+<link href="/Style/index2014/public.css" rel="stylesheet" />
+<div id="headerDiv">
+    <table class="width" height="30" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td align="left">
+                欢迎你，
+                <a href="/hrinfo/baseinfo/EmployeeDetail.asp" id="userid">徐晗</a>
+                <a href="/logout.asp">登出</a>
+                <a href="/hrinfo/attendance/check.asp?action=check&r=.7055475">打卡</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div id="header"></div>
+<div style="width:95%;margin:auto;" id="container">
+
+
+<div id="workspace" class="width">
+    <div id="mainContentDiv">
+
+		
+        <div class="marginbottom" border="0" cellspacing="0" cellpadding="0">
+            <div class="box boxsize fltlft">
+                <div class="titlebar">
+                    <span class="font14">公告</span>
+                    <span class="fltrt clear"><a href="/portal/Knowledge/Bulletin/BulletinIndex.aspx" class="font12">更多</a></span>
+                </div>
+                <div class="listpadding">
+            
+                </div>
+            </div>
+            <div class="box boxsize fltrt">
+                <div class="titlebar font14">快速通道</div>
+                <div class="listpadding">
+                    <a href="/hrinfo/baseinfo/default.asp" target="_blank" class="link fltlft" style="max-width:150px; min-width:150px;width:150px;">员工列表</a>
+                    <a href="/hrinfo/attendance/viewRecord.asp" target="_blank" class="link fltlft" style="max-width:150px; min-width:150px;width:150px;">打卡记录</a>
+                    <a href="/hrinfo/leaving/leave_apply01.asp" target="_blank" class="link fltlft" style="max-width:150px; min-width:150px;width:150px;">请假</a>
+                    <a href="/hrinfo/leaving/holiday_info.asp" target="_blank" class="link fltlft" style="max-width:150px; min-width:150px;width:150px;">年休假统计</a>
+               		<div class="clear"></div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+		
+		<div id="ajaxDiv" class="hidden center" style="text-align:center">
+			<img src='/images/loading.gif' />
+		</div>
+		<div id="divTask"  class="box marginbottom" style="display:none">
+            <div class="titlebar">
+                <span class="font14">待办事项&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:loadListToDo(1)" id="taskRefreshLink">刷新</a></span>
+                <span class="fltrt clear"><a href="/MVCPortal/SystemManage/Todo/NeedToDo" class="font12">更多</a></span>
+            </div>
+			<table id="taskList" class="listpadding" border="0" cellspacing="0" cellpadding="0">
+			</table>
+        </div>
+
+
+		
+        <div class="box marginbottom">
+            <div class="titlebar">
+                <span class="font14">我的链接</span>
+                <span class="fltrt clear"><a href="/mysite/mylink/Linkmanage.asp" target="_blank" class="font12">管理链接</a></span>
+            </div>
+            <div class="listpadding">
+				
+			
+				<div class="link fltlft width138px"><a href="http://jira.arcvideo.com:8080" target="_blank" title="用于Arcvideo，closeli等产品的管理">[JIRA]</a></div>
+					<div class="link fltlft width138px">	<a  href="http://confluence.arcvideo.com:8090" target="_blank">[Confluence]</a></div>
+		
+				<div class="link fltlft width138px"><a target="_blank" href="http://abs03">AutoBuild[03]</a></div>
+		
+			
+
+                        <div class="link fltlft width138px"><a href="/hrinfo/baseinfo/EmployeeDetail.asp">zyh3033</a></div>
+                        
+                <div class="clear"></div>
+            </div>
+        </div>       
+<div id="footer">
+
+<div id="hiddenTips" class="tips" style="display:none;cursor:pointer" onclick="javascript:tipsShow();"></div>
+<div id="openTips" class="tipsEx">
+    <div class="title"><span id="tipsHidden" onclick="javascript:tipsHidden();" class="close" style="cursor:pointer"></span><span class="clear"></span></div>
+    <div id="tipsDiv">
+    </div>
+</div>
+
+</div>
+<div id="footerDiv"><hr />
+Arcvideo
+</div>
+
+
+</div>
+</div>
+</body>
+</html>
+<script language="javascript" src="/script/index2014/index.js"></script>
+<script>
+function tipsHidden()
+{
+	$("#openTips").hide();
+	$("#hiddenTips").show();
+}
+function tipsShow()
+{
+	$("#openTips").show();
+	$("#hiddenTips").hide();
+}
+
+function opendisplay(url) 
+{
+  var openleft=5;
+  var opentop=5;
+  var calwidth=600;
+  var calheight=500;
+  openleft = parseInt(((screen.width - calwidth) / 2),10);
+  opentop = parseInt(((screen.height - calheight) / 2),10);
+  var attr = "left=" + openleft + ",top=" + opentop;
+  attr += ",resizable=yes, toolbar=no,directories=no,menubar=no,scrollbars=yes,width=" + calwidth + ",height=" + calheight;
+  popupwin=open(url, "Detail", attr);
+
+}
+
+setTimeout("loadListToDo(1)", 500);
+$(function()
+{ 
+	getMsg2014();
+});
+
+
+function loadListToDo(renew) {
+ var d = new Date();
+ var Refresh = 0;
+if (renew == 1)
+	Refresh = 1;
+ $.ajax({
+    url: "/MVCPortal/SystemManage/Todo/QueryToDo3?"+ "Refresh=" + Refresh+"&fresh=" + d ,
+    cache: true,
+    async: true,
+    timeout: 20000,
+    error:function()
+    {
+		  // jAlert('error', "网络繁忙，请点击刷新链接重新提交请求", '网络繁忙');
+		 $("#errorMsg").show();
+		 $("#ajaxDiv").hide();
+		 $("#taskRefreshLink").html("刷新");
+    },
+     beforeSend:function()
+     {
+		 if($("#divTask").css("display")!="block")
+		 $("#ajaxDiv").show();
+		 $("#taskRefreshLink").html("<img src='/images/icons/loading.gif' />");
+     },
+     success: function (data) {
+      $("#ajaxDiv").hide();
+         var showStr = data;
+         if (data.length > 100) {
+             //showStr = showStr.replace(/<![^>].*?>/g, "");
+             //showStr = showStr.replace(/[\r\n]*?</g, "<");
+             //showStr = showStr.replace(/\r\n/g, "<br>");
+             $("#taskList").html(showStr);
+            
+             var a=$("#taskList").find("a").length;
+             if(a>0)
+             {
+				$("#divTask").show();
+             }
+         }
+		 $("#taskRefreshLink").html("刷新");
+     }
+ })
+}
+</script>

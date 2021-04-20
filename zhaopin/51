@@ -1,0 +1,26 @@
+import requests
+
+import selenium
+import selenium.webdriver
+import re
+
+def getnumByPage51(searchname):
+    url = 'https://search.51job.com/list/010000,000000,0000,00,9,99,Python,2,1.html?lang=c&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&ord_field=0&dibiaoid=0&line=&welfare='
+    driver = selenium.webdriver.Chrome(executable_path="D:\Python\chromedriver.exe")
+    driver.get(url)
+    pagesource = driver.page_source
+    driver.close()
+
+    # headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.18363',
+    #            'Cookie': 'guid=f1ed3dd9cf104d86fe98b0264385b854; nsearch=jobarea%3D%26%7C%26ord_field%3D%26%7C%26recentSearch0%3D%26%7C%26recentSearch1%3D%26%7C%26recentSearch2%3D%26%7C%26recentSearch3%3D%26%7C%26recentSearch4%3D%26%7C%26collapse_expansion%3D; search=jobarea%7E%60080200%7C%21ord_field%7E%600%7C%21recentSearch0%7E%60080200%A1%FB%A1%FA000000%A1%FB%A1%FA0000%A1%FB%A1%FA00%A1%FB%A1%FA99%A1%FB%A1%FA%A1%FB%A1%FA99%A1%FB%A1%FA99%A1%FB%A1%FA99%A1%FB%A1%FA99%A1%FB%A1%FA9%A1%FB%A1%FA99%A1%FB%A1%FA%A1%FB%A1%FA0%A1%FB%A1%FAjava%A1%FB%A1%FA2%A1%FB%A1%FA1%7C%21; adv=adsnew%3D1%26%7C%26adsnum%3D4177755%26%7C%26adsresume%3D1%26%7C%26adsfrom%3Dhttps%253A%252F%252Fwww.baidu.com%252Fbaidu.php%253Fsc.Kf0000K5cNxA6dzipmF80vIP-_7SNiFJfJabRMEPgcPTt1ACsz5tfdvYXNlJeU6opcNzbigQ4TmUuOIBRmKBLD0pu4c1FRGEYF3JScmYovpP-zAMbSmUrp-i-et4L8FfwastqjB-ufLUfgyqV2Smi6CGTUWPy4Kmyek_doUU7k-8Asf5-rD9OLc-SF7iShJM4XU_nOtEzpZnpdbYasTqcaFPZQXU.Db_NR2Ar5Od66CHnsGtVdXNdlc2D1n2xx81IZ76Y_I-xW3SreIduz3vAxLOqIb5eOtHGOgCLYAX54tZ4xY5oeQtMLsxqWFECxo3Ol3EdtxzYUOkLOk5qMlePZtH4xx6O3Zj43AxLOqIaO4UqnrMxfOPSLOVNnOVOllOSkSLSIWov_gUS1GEu_ePqS8OGtUSM_dq-h1xYqnPq1572Il-muCyPdhOF8R0.U1Yk0ZDqPH7JUvc0TA-W5H00IjLN3evVPH7JUvc0pyYqnWcd0ATqTZPYT6KdpHdBmy-bIfKspyfqn1c0mv-b5Hc3n0KVIjYknjDLg1DsnH-xn1czr7tknjc1g1nvnjD0pvbqn0KzIjYzPjn0mhbqnHR3g1csP7tznHT0UynqnH6dPjRdnjTYn7tknj0kg1Dsn-tkg100TgKGujYs0Z7Wpyfqn0KzuLw9u1Ys0A7B5HKxn0K-ThTqnfKsTjYzP1m4n164nHmY0A4vTjYsQW0snj0snj0s0AdYTjYs0AwbUL0qn0KzpWYs0Aw-IWdsmsKhIjYs0ZKC5H00ULnqn0KBI1Ykn0K8IjYs0ZPl5fK9TdqGuAnqujDzQyNWp6KGuAnqHbG2RsKYmgFMugfqPWPxn7tkPHD0IZN15HfYnHTYnjTkn1T4nH0kP1n3PHc0ThNkIjYkPHb4njfdnHDkrHTY0ZPGujY4mHFWmhcvm10snj0kuHns0AP1UHY4rjnYfRmkPD77fWTYP1Pj0A7W5HD0TA3qn0KkUgfqn0KkUgnqn0KbugwxmLK95H00XMfqn0KVmdqhThqV5HKxn7tsg1Kxn0Kbmy4dmhNxTAk9Uh-bT1Ysg1KxPjndPWDsndtsg100TA7Ygvu_myTqn0Kbmv-b5H00ugwGujYVnfK9TLKWm1Ys0ZNspy4Wm1Ys0Z7VuWYs0AuWIgfqn0KGTvP_5H00XMK_Ignqn0K9uAu_myTqnfK_uhnqn0KbmvPb5fKYTh7buHYLPW0znjc0mhwGujYvfWD4fH0vrD77rjcLPRfkwDmLPHwAfW9KPjDknbf4f6KEm1Yk0AFY5H00Uv7YI1Ys0AqY5HD0ULFsIjYzc10Wnznzc1DYrjR1njTsnBn1nj0sc1n1nj08nj0snj0sc1DWnBnsczYWna3snHfvPj6WnB3snj0snj00TNqv5H08rHFxna3sn7tsQW0sg108nHNxna3knNtsQWnz0AF1gLKzUvwGujYs0APzm1YznHcYnf%2526ck%253D4212.6.87.394.559.423.571.342%2526shh%253Dwww.baidu.com%2526sht%253Dbaidu%2526us%253D1.0.2.0.1.309.0%2526wd%253D%2526bc%253D110101%26%7C%26ad_logid_url%3Dhttps%253A%252F%252Ftrace.51job.com%252Ftrace.php%253Fadsnum%253D4177755%2526ajp%253DaHR0cHM6Ly9ta3QuNTFqb2IuY29tL3RnL3NlbS9MUF8yMDIwXzEuaHRtbD9mcm9tPWJhaWR1YWQ%253D%2526k%253Dd946ba049bfb67b64f408966cbda3ee9%2526bd_vid%253D8508179349143010597%26%7C%26; slife=lastvisit%3D200200%26%7C%26; partner=www_baidu_com; 51job=cenglish%3D0%26%7C%26'}
+    # resp = requests.get(url, headers=headers)
+    reStr = '''<div class="rt">
+                    共(\\d+)条职位
+                </div>'''
+    # print(resp.text)
+    myList = re.findall(reStr, pagesource)
+    print(myList)
+    print(myList[0])
+
+
+getnumByPage51('java')

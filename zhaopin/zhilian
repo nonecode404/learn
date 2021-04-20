@@ -1,0 +1,20 @@
+import requests
+
+# url = 'https://sou.zhaopin.com/?jl=765&kw=java&kt=3'
+# resp = requests.get(url)
+# print(resp.text)
+
+import selenium
+import selenium.webdriver
+import re
+
+def getnumByPage(searchname):
+    url = 'https://sou.zhaopin.com/?jl=765&kw=' + searchname + '&kt=3'
+    driver = selenium.webdriver.Chrome(executable_path="D:\Python\chromedriver.exe")
+    driver.get(url)
+    pagesource = driver.page_source
+    reStr = ''
+    print(pagesource)
+    return pagesource
+
+getnumByPage('python')

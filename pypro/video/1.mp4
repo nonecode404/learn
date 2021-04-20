@@ -1,0 +1,59 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="same-origin">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no">
+    <script src="https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.3.min.js"></script>
+    <!--<script src="https://cdn.staticfile.org/hls.js/8.0.0-beta.3/hls.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dplayer@1.25.0/dist/DPlayer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/niuxit/captcha@1.2.4/captcha.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/dplayer/1.25.0/DPlayer.min.css">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?1632b1a0140ca81c518b0ee0f2b291f6";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body style="margin:0;padding: 0;">
+<div style="width:100%;height:100%;background: #000" id="my_player">
+</div>
+<div id="nx_captcha"></div>
+<script type="text/javascript">
+    var id="ce4901250ce2c7e336489f7fc82a607343fc5e65268799d6c7676fa4a20db589b08b9348f2275fc667a699e4f5fa8235f4f9727fe8cd30b9f745c17489d1b38ba8ad5b9e44be12cc4b288acc3d028619ecc6fbfca5118f511c142e22dc1a7147";
+    var src="play/"+id;
+    var sk="953df983fd12659453a8e643c60dffdcd7dc799eababa541";
+    var pt="995a3e17e5ebbfa98e80db46be75a39c0225064f830a08866fa2341d17b6050b8e814fcd59106f5b269943a59bb713502fbfb818525ce969";
+    var ti="1598694083";
+
+    var nx_cpatcha=new niux_captcha({
+        appid:"a27221daa68147fdb8f0f29c33e90f4f9194c9d8",
+        style:"popup",
+        element:"#nx_captcha",
+        callback:function (data) {
+            if(data.ret==1){
+                //验证成功
+                //你的业务逻辑
+                $("<form method='post' action=''><input type='hidden' name='captcha_sig' id='captcha_sig'value='"+data.captcha_sig+"'> </form>").appendTo("#my_player");
+                //document.getElementById("refresh").click();
+                $("form").submit();
+            }else if(data.ret==0){
+                //用户取消验证
+
+            }
+        },
+        onload:function(){
+                    },
+        text:"点击完成验证",
+        cancel:0
+    });
+</script>
+<script src="../js/encrypt_v2.min.js?v=3.2"></script>
+
+
+</body>
+</html>

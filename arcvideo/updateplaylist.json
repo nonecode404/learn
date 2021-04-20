@@ -1,0 +1,164 @@
+{
+    "updateplaylist": [
+        {
+            "URL": "http://172.17.22.137:8090/video/\u5012\u8ba1\u65f6.mp4",
+            "INITIAL_BUFFERTIME": 3001,
+            "PLAYINGTIME": 3000,
+            "MAX_BUFFERTIME": 40000,
+            "ID": "1",
+            "PAUSE": 1
+        },
+        {
+            "URL": "http://vod.aikan.miguvIDeo.com/88888888/16/20200813/295518321/295518321.ts?rrsip=vod.aikan.miguvIDeo.com&zoneoffset=0&servicetype=0&icpID=&accounttype=1&limitflux=-1&limitdur=-1&tenantID=8601&accountinfo=Gcti4DUUhvXUhn79YiMv2%2B4onXU4axEA%2FlunL%2BpYxrjMHwI%2B9EejAf10y75QcFJMdWb4E8qiCDCkcBO34az0QSWW85C1cs8j%2B%2Fgz8n2Sd%2Bozq5XlKJ7JMabmxeM83fZv%3A20200814081425%3AUTC%2Cc8640605163dfd3d0ff4b023634808470706661%2C117.148.130.146%2C20200814081425%2Ce28f6c6894074b58b907bc6647bf9705%2Cc8640605163dfd3d0ff4b023634808470706661%2C0.0%2C1%2C0%2C%2C%2C1%2C1000000201%2C%2C%2C1%2C23%2C0%2C241%2C22d1de024b3b27b7%2C%2C%2C1%2C0%2CEND&GuardEncType=2&netType=Wifi&clientType=AndroID&zjAppVersion=468&isVr=0",
+            "INITIAL_BUFFERTIME": 4002,
+            "PLAYINGTIME": 4000,
+            "MAX_BUFFERTIME": 40000,
+            "ID": "2",
+            "PAUSE": 1
+        },
+        {
+            "URL": "http://vod.aikan.miguvIDeo.com/88888888/16/20200810/295498152/295498152.ts?playseek=000000-000505&timezone=UTC&rrsip=vod.aikan.miguvIDeo.com&zoneoffset=0&servicetype=0&icpID=&accounttype=1&limitflux=-1&limitdur=-1&tenantID=8601&accountinfo=fQI1P5LozqnbuzOmWjTwkYWDGjYiLqryR%2B1IutAq7uJzKNNkHD5fglmRl6EuECvMJXM%2FJizpndIfCWXt5rVHQyvX3wlamJv2SW%2FugVrx8RBY0dI9JNv7cAbQWdSRgs8z%3A20200814081428%3AUTC%2Cc8640605163dfd3d0ff4b023634808470706661%2C60.191.59.173%2C20200814081428%2C00cff9a2a34b4e5395b7cb13632ac21e%2Cc8640605163dfd3d0ff4b023634808470706661%2C-1%2C1%2C0%2C%2C10%2C1%2C%2C%2C185520884%2C1%2C23%2C0%2C241%2C22d1de024b3b27b7%2C%2C%2C1%2C0%2CEND&GuardEncType=2&netType=Wifi&clientType=AndroID&zjAppVersion=468&isVr=0",
+            "INITIAL_BUFFERTIME": 5003,
+            "PLAYINGTIME": 5000,
+            "MAX_BUFFERTIME": 50000,
+            "ID": "3",
+            "PAUSE": 1
+        },
+        {
+            "URL": "http://vod.aikan.miguvIDeo.com/88888888/16/20200813/295517481/index.m3u8?rrsip=vod.aikan.miguvIDeo.com&zoneoffset=0&servicetype=0&icpID=&accounttype=1&limitflux=-1&limitdur=-1&tenantID=8601&accountinfo=fQI1P5LozqnbuzOmWjTwkYWDGjYiLqryR%2B1IutAq7uJRWtKPnrYe%2BKkVRi5qGodOyJNUqVqutc8aX0P7rDQtDkzlxsU%2BlTbhgEF5CutvrFU%3D%3A20200814081431%3AUTC%2Cc8640605163dfd3d0ff4b023634808470706661%2C60.191.59.173%2C20200814081431%2Cduanshipin2020081301%2Cc8640605163dfd3d0ff4b023634808470706661%2C0.0%2C1%2C0%2C%2C1%2C1%2C1000000201%2C%2C182902472%2C1%2C23%2C0%2C241%2C22d1de024b3b27b7%2C%2C%2C1%2C0%2CEND&GuardEncType=2&netType=Wifi&clientType=AndroID&zjAppVersion=468&isVr=0",
+            "INITIAL_BUFFERTIME": 4004,
+            "PLAYINGTIME": 4000,
+            "MAX_BUFFERTIME": 40000,
+            "ID": "4",
+            "PAUSE": 1
+        },
+        {
+            "URL": "http://vod.aikan.miguvIDeo.com/88888888/16/20200813/295514852/index.m3u8?rrsip=vod.aikan.miguvIDeo.com&zoneoffset=0&servicetype=0&icpID=&accounttype=1&limitflux=-1&limitdur=-1&tenantID=8601&accountinfo=fQI1P5LozqnbuzOmWjTwkYWDGjYiLqryR%2B1IutAq7uJRWtKPnrYe%2BKkVRi5qGodOFEHQNoyc%2BkWo0%2Fq8YyQcO0zlxsU%2BlTbhgEF5CutvrFU%3D%3A20200814081435%3AUTC%2Cc8640605163dfd3d0ff4b023634808470706661%2C60.191.59.173%2C20200814081435%2Cduanshipin2020081310%2Cc8640605163dfd3d0ff4b023634808470706661%2C0.0%2C1%2C0%2C%2C%2C1%2C1000000201%2C%2C%2C1%2C23%2C0%2C241%2C22d1de024b3b27b7%2C%2C%2C1%2C0%2CEND&GuardEncType=2&netType=Wifi&clientType=AndroID&zjAppVersion=468&isVr=0",
+            "INITIAL_BUFFERTIME": 4005,
+            "PLAYINGTIME": 4000,
+            "MAX_BUFFERTIME": 40000,
+            "ID": "5",
+            "PAUSE": 1
+        },
+        {
+            "URL": "http://vod.aikan.miguvIDeo.com/88888888/16/20200813/295517472/index.m3u8?rrsip=vod.aikan.miguvIDeo.com&zoneoffset=0&servicetype=0&icpID=&accounttype=1&limitflux=-1&limitdur=-1&tenantID=8601&accountinfo=fQI1P5LozqnbuzOmWjTwkYWDGjYiLqryR%2B1IutAq7uJRWtKPnrYe%2BKkVRi5qGodOg42uD6WN9%2B9ugH63Xylbr0zlxsU%2BlTbhgEF5CutvrFU%3D%3A20200814081437%3AUTC%2Cc8640605163dfd3d0ff4b023634808470706661%2C60.191.59.173%2C20200814081437%2Cduanshipin2020081311%2Cc8640605163dfd3d0ff4b023634808470706661%2C0.0%2C1%2C0%2C%2C%2C1%2C1000000201%2C%2C%2C1%2C23%2C0%2C241%2C22d1de024b3b27b7%2C%2C%2C1%2C0%2CEND&GuardEncType=2&netType=Wifi&clientType=AndroID&zjAppVersion=468&isVr=0",
+            "INITIAL_BUFFERTIME": 4006,
+            "PLAYINGTIME": 4000,
+            "MAX_BUFFERTIME": 40000,
+            "ID": "6",
+            "PAUSE": 1
+        },
+        {
+            "URL": "http://vod.aikan.miguvIDeo.com/88888888/16/20200813/295514849/index.m3u8?rrsip=vod.aikan.miguvIDeo.com&zoneoffset=0&servicetype=0&icpID=&accounttype=1&limitflux=-1&limitdur=-1&tenantID=8601&accountinfo=fQI1P5LozqnbuzOmWjTwkYWDGjYiLqryR%2B1IutAq7uKMNxyOVSyBnEXgMlTF7Ghj1z87JB2nuX9d7P5qG6XAP0zlxsU%2BlTbhgEF5CutvrFU%3D%3A20200814081440%3AUTC%2Cc8640605163dfd3d0ff4b023634808470706661%2C60.191.59.173%2C20200814081440%2Cduanshipin2020081309%2Cc8640605163dfd3d0ff4b023634808470706661%2C0.0%2C1%2C0%2C%2C%2C1%2C1000000201%2C%2C%2C1%2C23%2C0%2C241%2C22d1de024b3b27b7%2C%2C%2C1%2C0%2CEND&GuardEncType=2&netType=Wifi&clientType=AndroID&zjAppVersion=468&isVr=0",
+            "INITIAL_BUFFERTIME": 4007,
+            "PLAYINGTIME": 4000,
+            "MAX_BUFFERTIME": 40000,
+            "ID": "7",
+            "PAUSE": 1
+        },
+        {
+            "URL": "http://vod.aikan.miguvIDeo.com/88888888/16/20200813/295514867/index.m3u8?rrsip=vod.aikan.miguvIDeo.com&zoneoffset=0&servicetype=0&icpID=&accounttype=1&limitflux=-1&limitdur=-1&tenantID=8601&accountinfo=fQI1P5LozqnbuzOmWjTwkYWDGjYiLqryR%2B1IutAq7uKMNxyOVSyBnEXgMlTF7GhjJD3HcGtBkT2yWx5Ptj3smkzlxsU%2BlTbhgEF5CutvrFU%3D%3A20200814081442%3AUTC%2Cc8640605163dfd3d0ff4b023634808470706661%2C60.191.59.173%2C20200814081442%2Cduanshipin2020081303%2Cc8640605163dfd3d0ff4b023634808470706661%2C0.0%2C1%2C0%2C%2C1%2C1%2C1000000201%2C%2C208700385%2C1%2C23%2C0%2C241%2C22d1de024b3b27b7%2C%2C%2C1%2C0%2CEND&GuardEncType=2&netType=Wifi&clientType=AndroID&zjAppVersion=468&isVr=0",
+            "INITIAL_BUFFERTIME": 4008,
+            "PLAYINGTIME": 4000,
+            "MAX_BUFFERTIME": 40000,
+            "ID": "8",
+            "PAUSE": 1
+        },
+        {
+            "URL": "http://vod.aikan.miguvIDeo.com/88888888/16/20200813/295514855/index.m3u8?rrsip=vod.aikan.miguvIDeo.com&zoneoffset=0&servicetype=0&icpID=&accounttype=1&limitflux=-1&limitdur=-1&tenantID=8601&accountinfo=fQI1P5LozqnbuzOmWjTwkYWDGjYiLqryR%2B1IutAq7uKMNxyOVSyBnEXgMlTF7GhjIVV3TsZF1TtSnUE0TeVyKUzlxsU%2BlTbhgEF5CutvrFU%3D%3A20200814081444%3AUTC%2Cc8640605163dfd3d0ff4b023634808470706661%2C60.191.59.173%2C20200814081444%2Cduanshipin2020081304%2Cc8640605163dfd3d0ff4b023634808470706661%2C0.0%2C1%2C0%2C%2C1%2C1%2C1000000201%2C%2C120979339%2C1%2C23%2C0%2C241%2C22d1de024b3b27b7%2C%2C%2C1%2C0%2CEND&GuardEncType=2&netType=Wifi&clientType=AndroID&zjAppVersion=468&isVr=0",
+            "INITIAL_BUFFERTIME": 4009,
+            "PLAYINGTIME": 4000,
+            "MAX_BUFFERTIME": 40000,
+            "ID": "9",
+            "PAUSE": 1
+        },
+        {
+            "URL": "http://vod.aikan.miguvIDeo.com/88888888/16/20200813/295514861/index.m3u8?rrsip=vod.aikan.miguvIDeo.com&zoneoffset=0&servicetype=0&icpID=&accounttype=1&limitflux=-1&limitdur=-1&tenantID=8601&accountinfo=fQI1P5LozqnbuzOmWjTwkYWDGjYiLqryR%2B1IutAq7uKMNxyOVSyBnEXgMlTF7GhjEL30cPODIxIF1%2Fq9ffDe%2B0zlxsU%2BlTbhgEF5CutvrFU%3D%3A20200814081447%3AUTC%2Cc8640605163dfd3d0ff4b023634808470706661%2C60.191.59.173%2C20200814081447%2Cduanshipin2020081305%2Cc8640605163dfd3d0ff4b023634808470706661%2C0.0%2C1%2C0%2C%2C1%2C1%2C1000000201%2C%2C199640926%2C1%2C23%2C0%2C241%2C22d1de024b3b27b7%2C%2C%2C1%2C0%2CEND&GuardEncType=2&netType=Wifi&clientType=AndroID&zjAppVersion=468&isVr=0",
+            "INITIAL_BUFFERTIME": 4010,
+            "PLAYINGTIME": 4000,
+            "MAX_BUFFERTIME": 40000,
+            "ID": "10",
+            "PAUSE": 1
+        },
+        {
+            "URL": "http://vod.aikan.miguvIDeo.com/88888888/16/20200813/295514858/index.m3u8?rrsip=vod.aikan.miguvIDeo.com&zoneoffset=0&servicetype=0&icpID=&accounttype=1&limitflux=-1&limitdur=-1&tenantID=8601&accountinfo=fQI1P5LozqnbuzOmWjTwkYWDGjYiLqryR%2B1IutAq7uKMNxyOVSyBnEXgMlTF7Ghjr%2F4GAwBW%2BVWqPGYfduLWMkzlxsU%2BlTbhgEF5CutvrFU%3D%3A20200814081449%3AUTC%2Cc8640605163dfd3d0ff4b023634808470706661%2C60.191.59.173%2C20200814081449%2Cduanshipin2020081307%2Cc8640605163dfd3d0ff4b023634808470706661%2C0.0%2C1%2C0%2C%2C1%2C1%2C1000000201%2C%2C208947275%2C1%2C23%2C0%2C241%2C22d1de024b3b27b7%2C%2C%2C1%2C0%2CEND&GuardEncType=2&netType=Wifi&clientType=AndroID&zjAppVersion=468&isVr=0",
+            "INITIAL_BUFFERTIME": 4011,
+            "PLAYINGTIME": 4000,
+            "MAX_BUFFERTIME": 40000,
+            "ID": "11",
+            "PAUSE": 1
+        },
+        {
+            "URL": "http://vod.aikan.miguvIDeo.com/88888888/16/20200813/295517475/index.m3u8?rrsip=vod.aikan.miguvIDeo.com&zoneoffset=0&servicetype=0&icpID=&accounttype=1&limitflux=-1&limitdur=-1&tenantID=8601&accountinfo=fQI1P5LozqnbuzOmWjTwkYWDGjYiLqryR%2B1IutAq7uJlsm6Q7U9ZiiVaJwPBH6W1Lad5wt4MVjt5tBVlYuu4b0zlxsU%2BlTbhgEF5CutvrFU%3D%3A20200814081451%3AUTC%2Cc8640605163dfd3d0ff4b023634808470706661%2C60.191.59.173%2C20200814081451%2Cduanshipin2020081306%2Cc8640605163dfd3d0ff4b023634808470706661%2C0.0%2C1%2C0%2C%2C1%2C1%2C1000000201%2C%2C204834068%2C1%2C23%2C0%2C241%2C22d1de024b3b27b7%2C%2C%2C1%2C0%2CEND&GuardEncType=2&netType=Wifi&clientType=AndroID&zjAppVersion=468&isVr=0",
+            "INITIAL_BUFFERTIME": 4000,
+            "PLAYINGTIME": 4000,
+            "MAX_BUFFERTIME": 40000,
+            "ID": "12",
+            "PAUSE": 1
+        },
+        {
+            "URL": "http://vod.aikan.miguvIDeo.com/88888888/16/20200813/295517484/index.m3u8?rrsip=vod.aikan.miguvIDeo.com&zoneoffset=0&servicetype=0&icpID=&accounttype=1&limitflux=-1&limitdur=-1&tenantID=8601&accountinfo=fQI1P5LozqnbuzOmWjTwkYWDGjYiLqryR%2B1IutAq7uJlsm6Q7U9ZiiVaJwPBH6W1SY%2BdmaIDeZRB%2F4cD3uTXM0zlxsU%2BlTbhgEF5CutvrFU%3D%3A20200814081453%3AUTC%2Cc8640605163dfd3d0ff4b023634808470706661%2C60.191.59.173%2C20200814081453%2Cduanshipin2020081308%2Cc8640605163dfd3d0ff4b023634808470706661%2C0.0%2C1%2C0%2C%2C1%2C1%2C1000000201%2C%2C194015906%2C1%2C23%2C0%2C241%2C22d1de024b3b27b7%2C%2C%2C1%2C0%2CEND&GuardEncType=2&netType=Wifi&clientType=AndroID&zjAppVersion=468&isVr=0",
+            "INITIAL_BUFFERTIME": 4000,
+            "PLAYINGTIME": 4000,
+            "MAX_BUFFERTIME": 40000,
+            "ID": "13",
+            "PAUSE": 1
+        },
+        {
+            "URL": "http://vod.aikan.miguvIDeo.com/88888888/16/20200810/295498629/295498629.ts?playseek=000000-000505&timezone=UTC&rrsip=vod.aikan.miguvIDeo.com&zoneoffset=0&servicetype=0&icpID=&accounttype=1&limitflux=-1&limitdur=-1&tenantID=8601&accountinfo=fQI1P5LozqnbuzOmWjTwkYWDGjYiLqryR%2B1IutAq7uJlsm6Q7U9ZiiVaJwPBH6W1zLoqoJJNLtuZT4NhAlhAoPFXwd%2Fz615zLc%2BPZSSuAvpY0dI9JNv7cAbQWdSRgs8z%3A20200814081455%3AUTC%2Cc8640605163dfd3d0ff4b023634808470706661%2C60.191.59.173%2C20200814081455%2Cd2d2f96dac1c4e3787fdf4ec49bb1447%2Cc8640605163dfd3d0ff4b023634808470706661%2C-1%2C1%2C0%2C%2C11%2C1%2C%2C%2C188340619%2C1%2C23%2C0%2C241%2C22d1de024b3b27b7%2C%2C%2C1%2C0%2CEND&GuardEncType=2&netType=Wifi&clientType=AndroID&zjAppVersion=468&isVr=0",
+            "INITIAL_BUFFERTIME": 4000,
+            "PLAYINGTIME": 4000,
+            "MAX_BUFFERTIME": 40000,
+            "ID": "14",
+            "PAUSE": 1
+        },
+        {
+            "URL": "http://vod.aikan.miguvIDeo.com/88888888/16/20200812/295508837/295508837.ts?playseek=000000-000505&timezone=UTC&rrsip=vod.aikan.miguvIDeo.com&zoneoffset=0&servicetype=0&icpID=&accounttype=1&limitflux=-1&limitdur=-1&tenantID=8601&accountinfo=Gcti4DUUhvXUhn79YiMv2%2B4onXU4axEA%2FlunL%2BpYxrjMHwI%2B9EejAf10y75QcFJMcU8fJRAOaPhcKhREXvBqsDJgXA%2BCm664wbZ3l%2FPrjjLjCdXG6676IFnv%2Fjss3xT8%3A20200814081458%3AUTC%2Cc8640605163dfd3d0ff4b023634808470706661%2C117.148.130.146%2C20200814081458%2Cee841b2b9e364858ba02f363b14a41ab%2Cc8640605163dfd3d0ff4b023634808470706661%2C-1%2C1%2C0%2C%2C14%2C1%2C%2C%2C194015906%2C1%2C23%2C0%2C241%2C22d1de024b3b27b7%2C%2C%2C1%2C0%2CEND&GuardEncType=2&netType=Wifi&clientType=AndroID&zjAppVersion=468&isVr=0",
+            "INITIAL_BUFFERTIME": 4000,
+            "PLAYINGTIME": 4000,
+            "MAX_BUFFERTIME": 40000,
+            "ID": "15",
+            "PAUSE": 1
+        },
+        {
+            "URL": "http://vod.aikan.miguvIDeo.com/88888888/16/20200812/295513803/index.m3u8?rrsip=vod.aikan.miguvIDeo.com&zoneoffset=0&servicetype=0&icpID=&accounttype=1&limitflux=-1&limitdur=-1&tenantID=8601&accountinfo=fQI1P5LozqnbuzOmWjTwkYWDGjYiLqryR%2B1IutAq7uK1Ea2aLHo4vXXXyBZ0VJdKZzZULPnddYWLFVbySBofTUzlxsU%2BlTbhgEF5CutvrFU%3D%3A20200814081502%3AUTC%2Cc8640605163dfd3d0ff4b023634808470706661%2C60.191.59.173%2C20200814081502%2Cduanshipin2020081202%2Cc8640605163dfd3d0ff4b023634808470706661%2C0.0%2C1%2C0%2C%2C1%2C1%2C1000000201%2C%2C187040958%2C1%2C23%2C0%2C241%2C22d1de024b3b27b7%2C%2C%2C1%2C0%2CEND&GuardEncType=2&netType=Wifi&clientType=AndroID&zjAppVersion=468&isVr=0",
+            "INITIAL_BUFFERTIME": 4000,
+            "PLAYINGTIME": 4000,
+            "MAX_BUFFERTIME": 40000,
+            "ID": "16",
+            "PAUSE": 1
+        },
+        {
+            "URL": "http://vod.aikan.miguvIDeo.com/88888888/16/20200808/295492307/295492307.ts?playseek=000000-000505&timezone=UTC&rrsip=vod.aikan.miguvIDeo.com&zoneoffset=0&servicetype=0&icpID=&accounttype=1&limitflux=-1&limitdur=-1&tenantID=8601&accountinfo=fQI1P5LozqnbuzOmWjTwkYWDGjYiLqryR%2B1IutAq7uK1Ea2aLHo4vXXXyBZ0VJdKfxNY07VNm4W%2FDnwtLUS%2Bzax969VnpKshqYRZ%2BTS8EwZY0dI9JNv7cAbQWdSRgs8z%3A20200814081504%3AUTC%2Cc8640605163dfd3d0ff4b023634808470706661%2C60.191.59.173%2C20200814081504%2Ce48cf5277e464568b29ade4998b74707%2Cc8640605163dfd3d0ff4b023634808470706661%2C-1%2C1%2C0%2C%2C17%2C1%2C%2C%2C187472788%2C1%2C23%2C0%2C241%2C22d1de024b3b27b7%2C%2C%2C1%2C0%2CEND&GuardEncType=2&netType=Wifi&clientType=AndroID&zjAppVersion=468&isVr=0",
+            "INITIAL_BUFFERTIME": 4000,
+            "PLAYINGTIME": 4000,
+            "MAX_BUFFERTIME": 40000,
+            "ID": "17",
+            "PAUSE": 1
+        },
+        {
+            "URL": "http://vod.aikan.miguvIDeo.com/88888888/16/20200812/295513806/index.m3u8?rrsip=vod.aikan.miguvIDeo.com&zoneoffset=0&servicetype=0&icpID=&accounttype=1&limitflux=-1&limitdur=-1&tenantID=8601&accountinfo=fQI1P5LozqnbuzOmWjTwkYWDGjYiLqryR%2B1IutAq7uK1Ea2aLHo4vXXXyBZ0VJdKsUhlZPyAeXneU9nlJ7lUNEzlxsU%2BlTbhgEF5CutvrFU%3D%3A20200814081507%3AUTC%2Cc8640605163dfd3d0ff4b023634808470706661%2C60.191.59.173%2C20200814081507%2Cduanshipin2020081204%2Cc8640605163dfd3d0ff4b023634808470706661%2C0.0%2C1%2C0%2C%2C1%2C1%2C1000000201%2C%2C199640926%2C1%2C23%2C0%2C241%2C22d1de024b3b27b7%2C%2C%2C1%2C0%2CEND&GuardEncType=2&netType=Wifi&clientType=AndroID&zjAppVersion=468&isVr=0",
+            "INITIAL_BUFFERTIME": 4000,
+            "PLAYINGTIME": 4000,
+            "MAX_BUFFERTIME": 40000,
+            "ID": "18",
+            "PAUSE": 1
+        },
+        {
+            "URL": "http://vod.aikan.miguvIDeo.com/88888888/16/20200812/295513794/index.m3u8?rrsip=vod.aikan.miguvIDeo.com&zoneoffset=0&servicetype=0&icpID=&accounttype=1&limitflux=-1&limitdur=-1&tenantID=8601&accountinfo=fQI1P5LozqnbuzOmWjTwkYWDGjYiLqryR%2B1IutAq7uK1Ea2aLHo4vXXXyBZ0VJdKGuOduxYmlHM9UvbJ1kHK8UzlxsU%2BlTbhgEF5CutvrFU%3D%3A20200814081509%3AUTC%2Cc8640605163dfd3d0ff4b023634808470706661%2C60.191.59.173%2C20200814081509%2Cduanshipin2020081210%2Cc8640605163dfd3d0ff4b023634808470706661%2C0.0%2C1%2C0%2C%2C%2C1%2C1000000201%2C%2C%2C1%2C23%2C0%2C241%2C22d1de024b3b27b7%2C%2C%2C1%2C0%2CEND&GuardEncType=2&netType=Wifi&clientType=AndroID&zjAppVersion=468&isVr=0",
+            "INITIAL_BUFFERTIME": 4000,
+            "PLAYINGTIME": 4000,
+            "MAX_BUFFERTIME": 40000,
+            "ID": "19",
+            "PAUSE": 1
+        },
+        {
+            "URL": "http://vod.aikan.miguvIDeo.com/88888888/16/20200812/295511177/index.m3u8?rrsip=vod.aikan.miguvIDeo.com&zoneoffset=0&servicetype=0&icpID=&accounttype=1&limitflux=-1&limitdur=-1&tenantID=8601&accountinfo=fQI1P5LozqnbuzOmWjTwkYWDGjYiLqryR%2B1IutAq7uK0f5%2BRJmMKz%2F1eTvHOr7XX3Fo4%2FF9NjHf%2BZyisID6GfUzlxsU%2BlTbhgEF5CutvrFU%3D%3A20200814081511%3AUTC%2Cc8640605163dfd3d0ff4b023634808470706661%2C60.191.59.173%2C20200814081511%2Cduanshipin2020081205%2Cc8640605163dfd3d0ff4b023634808470706661%2C0.0%2C1%2C0%2C%2C1%2C1%2C1000000201%2C%2C115853459%2C1%2C23%2C0%2C241%2C22d1de024b3b27b7%2C%2C%2C1%2C0%2CEND&GuardEncType=2&netType=Wifi&clientType=AndroID&zjAppVersion=468&isVr=0",
+            "INITIAL_BUFFERTIME": 4000,
+            "PLAYINGTIME": 4000,
+            "MAX_BUFFERTIME": 40000,
+            "ID": "20",
+            "PAUSE": 1
+        }
+    ]
+}
